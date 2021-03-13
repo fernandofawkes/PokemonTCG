@@ -4,7 +4,7 @@
 
 export const environment = {
   production: false,
-  apiDomainPath: 'https://api.pokemontcg.io',
+  apiDomainPath: 'https://api.pokemontcg.io/${version}/',
   apiKey: 'my-api-key'
 };
 
