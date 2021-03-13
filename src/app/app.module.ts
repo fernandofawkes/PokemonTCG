@@ -6,11 +6,23 @@ import { AppComponent } from './app.component';
 import { environment } from 'src/environments/environment';
 import { httpInterceptorProviders } from './interceptors/interceptors.barrel';
 import { registerLocaleData } from '@angular/common';
+import { HeaderComponent } from './components/header/header.component';
+import { SearchComponent } from './components/search/search.component';
+import { ResultsComponent } from './components/results/results.component';
+import { CardComponent } from './components/card/card.component';
+import { FooterComponent } from './components/footer/footer.component';
+import { DetailsComponent } from './components/details/details.component';
 
 registerLocaleData(LOCALE_PT, 'pt-BR');
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    HeaderComponent,
+    SearchComponent,
+    ResultsComponent,
+    CardComponent,
+    FooterComponent,
+    DetailsComponent
   ],
   imports: [
     BrowserModule,
