@@ -12,6 +12,7 @@ import { ResultsComponent } from './components/results/results.component';
 import { CardComponent } from './components/card/card.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { DetailsComponent } from './components/details/details.component';
+import { HttpClientModule } from '@angular/common/http';
 
 registerLocaleData(LOCALE_PT, 'pt-BR');
 @NgModule({
@@ -26,12 +27,13 @@ registerLocaleData(LOCALE_PT, 'pt-BR');
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    HttpClientModule
   ],
   providers: [
     { provide: 'API_DOMAIN', useValue: environment.apiDomainPath },
-    { provide: 'API_VERSION', useValue: environment.apiKey },
-    { provide: 'API_KEY', useValue: 'v2' },
+    { provide: 'API_VERSION', useValue: 'v2'},
+    { provide: 'API_KEY', useValue: environment.apiKey  },
     { provide: LOCALE_ID, useValue: 'pt-BR' },
     httpInterceptorProviders
   ],
