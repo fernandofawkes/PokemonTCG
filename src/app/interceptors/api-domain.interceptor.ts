@@ -23,5 +23,4 @@ export class ApiDomainInterceptor implements HttpInterceptor {
 
     return next.handle(req);
   }
-
 }
