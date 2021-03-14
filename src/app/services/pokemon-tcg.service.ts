@@ -1,7 +1,8 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { iif, of, throwError } from 'rxjs';
-import { concatMap, expand, map, toArray  } from 'rxjs/operators';
+import { concatMap, expand, map, pluck, toArray  } from 'rxjs/operators';
+import { ApiResponse } from '../models/ApiResponse';
 
 @Injectable({
   providedIn: 'root'
@@ -32,7 +33,7 @@ export class PokemonTCGService {
   getCard(id: string) {
     return iif(() => !id.length, 
       throwError({message: 'no id parameter provided'}),
-      this.http.get(`/cards/${id}`)
+      this.http.get(`/cards/${id}`).pipe(pluck('data'))
     );
   }
 }

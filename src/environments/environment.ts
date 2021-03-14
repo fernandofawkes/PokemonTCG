@@ -4,8 +4,8 @@
 
 export const environment = {
   production: false,
-  apiDomainPath: 'https://api.pokemontcg.io/${version}/',
-  apiKey: 'my-api-key'
+  apiDomainPath: 'https://api.pokemontcg.io/${version}',
+  apiKey: '5318bb59-d6de-41ea-9683-925102966852'
 };
 
 /*

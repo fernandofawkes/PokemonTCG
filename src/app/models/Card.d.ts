@@ -1,3 +1,7 @@
+import { Attack } from "./Attack";
+import { Resistance } from "./Resistance";
+import { Weakness } from "./Weakness";
+
 interface Card {
   "id": string,
   "name": string,
@@ -10,3 +14,5 @@ interface Card {
     "large": string
   }
 }
+
+export {Card};

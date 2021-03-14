@@ -1,3 +1,5 @@
+import { Card } from "./Card";
+
 interface ApiResponse {
   data: Card[],
   page: number,
@@ -5,3 +7,5 @@ interface ApiResponse {
   pageSize: number,
   totalCount: number
 }
+
+export {ApiResponse};

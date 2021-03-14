@@ -5,3 +5,5 @@ interface Attack {
   "damage": string,
   "text": string
 }
+
+export {Attack};
