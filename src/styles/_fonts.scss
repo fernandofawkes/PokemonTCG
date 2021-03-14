@@ -1,0 +1,21 @@
+@mixin font($family, $path, $weight, $style){
+  font-family: $family;
+  src:url($path + ".svg");
+  src:url($path + ".eot?#iefix") format("embedded-opentype"),
+      url($path + ".woff") format("woff"),
+      url($path + ".ttf") format("truetype");
+  font-weight: $weight;
+  font-style: $style;
+}
+
+@mixin weight(){
+  @each $weight in $weights{
+    .weight#{$weight} {
+      font-weight: $weight !important;
+    }
+  }
+}
+
+@font-face {
+  @include font("Feather", "/assets/fonts/feather/feather", 400, normal);
+}

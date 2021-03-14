@@ -1,0 +1,9 @@
+@import './variables';
+
+@mixin box-shadow {
+  background-color: $white;
+  box-shadow: 0 0 rem(5px) rgba($black, 0.16);
+  border-radius: $radius;
+  padding-bottom: rem(24px);
+}
+  

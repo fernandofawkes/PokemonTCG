@@ -1,0 +1,28 @@
+@import './colors';
+@import './breakpoints';
+
+@function remove-unit($number) {
+  @if type-of($number) == "number" and not unitless($number) {
+    @return $number/($number * 0 + 1);
+  }
+
+  @return $number;
+}
+@function rem($value) {
+  @return #{remove-unit($value) / 14}rem;
+}
+
+$font-sizes: (
+  "72": rem(72),
+  "32": rem(32),
+  "24": rem(24),
+  "18": rem(18),
+  "14": 1,
+) !default;
+
+$radius: 3px !default;
+
+$transition: all 0.3s linear !default;
+
+$padding: rem(85px) 0;
+

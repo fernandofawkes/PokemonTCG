@@ -1,0 +1,13 @@
+@import "../../../styles/variables";
+
+.info {
+  width: rem(28px);
+  height: rem(28px);
+  cursor: pointer;
+  position: relative;
+
+  i {
+    color: $blue;
+    font-size: rem(24px);
+  }
+}

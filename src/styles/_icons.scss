@@ -1,0 +1,37 @@
+[class^="icon-"],
+[class*=" icon-"] {
+  display: inline-block;
+  width: 1em;
+  height: 1em;
+  position: relative;
+}
+
+[class^="icon-"]:before,
+[class*=" icon-"]:before {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-family: "Feather" !important;
+  font-style: normal !important;
+  font-weight: normal !important;
+  font-variant: normal !important;
+  text-transform: none !important;
+  speak: none;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  margin-top: 0.1em;
+}
+
+
+.icon-info:before {
+  content: "\e02e";
+}
+
+.icon-arrow-left:before {
+  content: "\75";
+}
+
+.icon-arrow-right:before {
+  content: "\77";
+}

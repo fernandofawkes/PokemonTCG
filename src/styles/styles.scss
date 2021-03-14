@@ -1,0 +1,70 @@
+@import "./variables";
+@import "./icons";
+@import "./fonts";
+:root {
+  font-size: 14px;
+}
+
+@media screen and (max-width: $screen-sm) {
+  :root {
+    font-size: 14px;
+  }
+}
+
+@media screen and (min-width: $screen-sm + 1) and (max-width: $screen-md - 1) {
+  :root {
+    font-size: 14px;
+  }
+}
+
+@media screen and (min-width: $screen-md + 1) and (max-width: $screen-lg - 1) {
+  :root {
+    font-size: 16px;
+  }
+}
+
+@media screen and (min-width: $screen-lg) {
+  :root {
+    font-size: 16px;
+  }
+}
+
+*,
+html {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+  font-family: "Segoe UI", sans-serif;
+  list-style: none;
+  text-decoration: none;
+  box-sizing: border-box;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+html,
+body {
+  background: #fafafa;
+  font-family: "Product Sans", sans-serif;
+  color: $black;
+  font-size: rem(14px);
+}
+
+h1,
+h2,
+h3 {
+  font-weight: 900;
+  color: $black;
+}
+
+
+.flex {
+  display: flex;
+
+  &.sb {
+    justify-content: space-between;
+  }
+  &.ac {
+    align-items: center;
+  }
+}

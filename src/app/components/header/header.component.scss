@@ -1,0 +1,13 @@
+@import "../../../styles/variables";
+@import "../../../styles/mixins";
+
+header {
+  padding: rem(18px) 0;
+  background-color: $white;
+  @include box-shadow;
+
+  .logo {
+    display: inline-block;
+    width: rem(100px);
+  }
+}

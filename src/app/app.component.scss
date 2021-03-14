@@ -1,0 +1,33 @@
+@import "../styles/variables";
+
+.app {
+  &__wrapper {
+    flex-direction: column;
+    height: 100vh;
+  }
+  &__content {
+    flex: 1;
+  }
+}
+
+.overlay {
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  width: 100%;
+  background-color: transparentize($color: $dark-grey, $amount: 0.75);
+  img { 
+    animation: rotate 1s infinite linear;
+  }
+}
+
+@keyframes rotate {
+  from {
+    transform: rotate(0);
+  }
+  to {
+    transform: rotate(1turn);
+  }
+}
