@@ -13,6 +13,7 @@ import { CardComponent } from './components/card/card.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { DetailsComponent } from './components/details/details.component';
 import { HttpClientModule } from '@angular/common/http';
+import { FormsModule } from '@angular/forms';
 
 registerLocaleData(LOCALE_PT, 'pt-BR');
 @NgModule({
@@ -28,7 +29,8 @@ registerLocaleData(LOCALE_PT, 'pt-BR');
   imports: [
     BrowserModule,
     AppRoutingModule,
-    HttpClientModule
+    HttpClientModule,
+    FormsModule
   ],
   providers: [
     { provide: 'API_DOMAIN', useValue: environment.apiDomainPath },

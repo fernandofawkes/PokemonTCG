@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute, ActivatedRouteSnapshot, Router } from '@angular/router';
+import { Subject } from 'rxjs';
+import { debounceTime, distinctUntilChanged, take } from 'rxjs/operators';
 
 @Component({
   selector: 'app-search',
@@ -7,9 +10,19 @@ import { Component, OnInit } from '@angular/core';
 })
 export class SearchComponent implements OnInit {
 
-  constructor() { }
+  inputs$ = new Subject();
+  
+  constructor(private router: Router) { }
 
   ngOnInit(): void {
+    
+    this.inputs$.pipe(debounceTime(350), distinctUntilChanged()).subscribe((query) => {
+      this.router.navigate(['/results'], {queryParams: {q: query}});
+    });
+    
   }
 
+  set query(val) {
+    this.inputs$.next(val);
+  } 
 }
