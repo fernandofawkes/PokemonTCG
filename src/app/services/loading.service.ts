@@ -6,7 +6,7 @@ import { debounceTime, filter, scan, tap } from 'rxjs/operators';
   providedIn: 'root'
 })
 export class LoadingService {
-  private loading = new BehaviorSubject<boolean>(false);
+  private loading = new BehaviorSubject<boolean>(true);
   
   loading$ = this.loading.asObservable();
 
@@ -28,8 +28,7 @@ export class LoadingService {
         )
       ])
       .pipe(
-        filter(([requisicoesCount, respostasCount]) => requisicoesCount === respostasCount),
-        debounceTime(150)
+        filter(([requisicoesCount, respostasCount]) => requisicoesCount === respostasCount)
       )
       .subscribe(() => {
         this.loading.next(false);

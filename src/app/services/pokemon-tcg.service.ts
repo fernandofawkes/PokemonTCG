@@ -2,6 +2,7 @@ import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { iif, of, throwError } from 'rxjs';
 import { concatMap, expand, map, pluck, toArray  } from 'rxjs/operators';
+import { memoize } from '../helper/memoize';
 import { ApiResponse } from '../models/ApiResponse';
 
 @Injectable({
@@ -10,6 +11,8 @@ import { ApiResponse } from '../models/ApiResponse';
 export class PokemonTCGService {
 
   constructor(private http: HttpClient) { }
+
+  getCardsMemoized = memoize(this.getAllCards.bind(this));
 
   getAllCards(query: string = '', page = 1) {
     return this.getCardsPage(query,page).pipe(

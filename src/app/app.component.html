@@ -1,10 +1,10 @@
-<div class="overlay" *ngIf="showLoading$ | async">
-  <img src="./assets/images/ball@2x.png" alt="pokéball">
-</div>
-<div class="app__wrapper flex">
-  <app-header></app-header>
-  <main class="app__content">
-    <router-outlet></router-outlet>
-  </main>  
-  <app-footer></app-footer>
-</div>
+  <div class="overlay" *ngIf="showLoading$ | async">
+    <img src="./assets/images/ball@2x.png" alt="pokéball">
+  </div>
+  <div class="app__wrapper flex" [class.loading]="showLoading$ | async">
+    <app-header></app-header>
+    <main class="app__content">
+      <router-outlet></router-outlet>
+    </main>  
+    <app-footer></app-footer>
+  </div>

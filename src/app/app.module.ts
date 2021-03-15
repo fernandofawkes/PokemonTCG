@@ -14,6 +14,8 @@ import { FooterComponent } from './components/footer/footer.component';
 import { DetailsComponent } from './components/details/details.component';
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
+import { LazyImageComponent } from './components/lazy-image/lazy-image.component';
+import { ToColorPipe } from './pipes/to-color.pipe';
 
 registerLocaleData(LOCALE_PT, 'pt-BR');
 @NgModule({
@@ -24,7 +26,9 @@ registerLocaleData(LOCALE_PT, 'pt-BR');
     ResultsComponent,
     CardComponent,
     FooterComponent,
-    DetailsComponent
+    DetailsComponent,
+    LazyImageComponent,
+    ToColorPipe
   ],
   imports: [
     BrowserModule,
