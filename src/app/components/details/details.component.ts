@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
+import { Card } from 'src/app/models/Card';
 
 @Component({
   selector: 'app-details',
@@ -7,12 +8,13 @@ import { ActivatedRoute } from '@angular/router';
   styleUrls: ['./details.component.scss']
 })
 export class DetailsComponent implements OnInit {
+  details: Card;
 
   constructor(private route: ActivatedRoute) { }
 
   ngOnInit(): void {
-    const details = this.route.snapshot.data['cardData'];
-    console.log(details);
+    this.details = this.route.snapshot.data['cardData'];
+
   }
 
 }

@@ -1,1 +1,37 @@
-<p>details works!</p>
+<div class="bounding-box">
+  <div class="row">
+    <div class="container container--image">
+      <app-lazy-image class="card__section" [src]="details.images.large" [alt]="details.name"></app-lazy-image>
+    </div>
+
+    <div class="container">
+      <p class="info__id">#{{details.id}}</p>
+      <h1 class="info__name">{{details.name}}</h1>
+      <span class="info__type" *ngFor="let type of details.types"
+        [ngStyle]="{'background-color': type | toColor}">{{type}}</span>
+    </div>
+  </div>
+  <div class="row">
+    <div class="container container--skills">
+      <h2 class="info__name">Attacks</h2>
+      <div class="attribute attribute--skill" *ngFor="let attack of details.attacks">
+        <span class="info__type" *ngFor="let type of attack.cost"
+          [ngStyle]="{'background-color': type | toColor}">{{type}}</span>
+          {{attack.name}}
+          {{attack.damage}}
+          <p>
+            {{attack.text}}
+          </p>
+      </div>
+    </div>
+    <div class="container container--effectiveness">
+      <h2 class="info__name">Resistances and Weaknesses</h2>
+
+      <div class="attribute attribute--weakness" *ngFor="let weak of details.weaknesses">
+        <span class="info__type" [ngStyle]="{'background-color': weak | toColor}">{{weak.type}}</span>: {{weak.value}}
+      </div>
+      <div class="attribute attribute--resistance" *ngFor="let resist of details.resistances">
+        <span class="info__type" [ngStyle]="{'background-color': resist | toColor}">{{resist.type}}</span>:{{resist.value}}</div>
+    </div>
+  </div>
+</div>

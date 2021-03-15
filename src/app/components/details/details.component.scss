@@ -1,0 +1,39 @@
+@import '../../../styles/variables';
+
+.bounding-box {
+  background-color: $white;
+  box-shadow: 0 0 rem(16px) rgba($black, 0.16);
+  margin-top: rem(80px);
+}
+
+.row {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-start;
+
+}
+.container {
+  flex-basis: 80%;
+  @media screen and (min-width: $screen-sm) {
+    flex-basis: 45%;
+  }
+  padding: rem(25px);
+
+  &--image {
+     padding:0;
+
+    margin: auto;
+    width: 75%;
+    margin-top:  rem(-50px);
+  }
+}
+.info__type {
+    background-color: $dark-grey;
+    color: $white;
+    border-radius: $radius;
+    margin: 0 5px 5px 0;
+    padding: 0 2px;
+}
+.attribute {
+  flex-basis: 25%;
+}

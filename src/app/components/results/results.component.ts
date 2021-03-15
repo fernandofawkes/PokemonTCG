@@ -1,6 +1,6 @@
-import { AfterViewInit, Component, OnInit } from '@angular/core';
+import { AfterViewInit, Component } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import { delay, map, pluck, switchMap, tap } from 'rxjs/operators';
+import { map, pluck, switchMap, tap } from 'rxjs/operators';
 import { PokemonTCGService } from 'src/app/services/pokemon-tcg.service';
 
 @Component({
