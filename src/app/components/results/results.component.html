@@ -1,3 +1,4 @@
-<div>
+<h2 class="page__title">{{currentSearchTerm ? 'Search Results for \"' + currentSearchTerm + '\"': 'All Cards'}}</h2>
+<div class="cards__grid">
   <app-card *ngFor="let card of cards$ | async; trackBy: identifyCard" [card]="card"></app-card>
 </div>

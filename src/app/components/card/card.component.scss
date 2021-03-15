@@ -1,0 +1,53 @@
+@import "../../../styles/variables";
+.card {
+  padding: 15px;
+  box-shadow: 0 0 rem(16px) rgba($black, 0.16);
+  display: flex;
+  transition:$transition;
+  height: 100%;
+  &__section { 
+    flex: 1;
+    &+& {
+      margin-left: 15px;
+    }
+  }
+  &:hover {
+    .arrow {
+      opacity: 1;
+    }
+    transform: translateY(-15px);
+  }
+
+  &__infos {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+}
+
+.info {
+  &__id {
+    color: $light-grey;
+  }
+  &__name {
+    color: $black;
+    
+  }
+  &__type {
+    background-color: $dark-grey;
+    color: $white;
+    border-radius: $radius;
+    margin: 0 5px 5px 0;
+    padding: 0 2px;
+  }
+  &__arrow {
+    color: $grey;
+    text-align: right;
+    
+    .arrow {
+      opacity: 0;
+      transition: $transition;
+      font-size: rem(24);
+    }
+  }
+}

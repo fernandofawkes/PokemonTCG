@@ -10,4 +10,9 @@ header {
     display: inline-block;
     width: rem(100px);
   }
+
+  .wrapper {
+    @include content-width;
+
+  }
 }

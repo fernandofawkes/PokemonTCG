@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import { map, pluck, switchMap } from 'rxjs/operators';
+import { map, pluck, switchMap, tap } from 'rxjs/operators';
 import { PokemonTCGService } from 'src/app/services/pokemon-tcg.service';
 
 @Component({
@@ -10,12 +10,14 @@ import { PokemonTCGService } from 'src/app/services/pokemon-tcg.service';
 })
 export class ResultsComponent implements OnInit {
   cards$;
+  currentSearchTerm: string;
   constructor(private tcgService: PokemonTCGService, private route: ActivatedRoute) { }
 
   ngOnInit(): void {
     this.cards$ = this.route.queryParams.pipe(
       pluck('q'),
-      switchMap((query) => this.tcgService.getAllCards(query ? `q=name:${query}*` : ''))
+      tap(query => this.currentSearchTerm = query),
+      switchMap((query) => this.tcgService.getCardsMemoized(query ? `q=name:${query}*` : ''))
      ).pipe(map(cards => {
       return cards.sort((a,b) => (a.name).localeCompare(b.name));
     }));

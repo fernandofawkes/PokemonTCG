@@ -1,3 +1,40 @@
 $screen-sm: 767px;
 $screen-md: 991px;
 $screen-lg: 1200px;
+$gutter: 30px;
+
+@function strip-unit($number) {
+  @if type-of($number) == "number" and not unitless($number) {
+    @return $number/($number * 0 + 1);
+  }
+
+  @return $number;
+}
+$container: (
+  "xs": 546,
+  "sm": 738,
+  "md": 972,
+  "lg": 1170,
+) !default;
+
+$breakpoints: (
+  "xs": 0,
+  "sm": strip-unit($screen-sm),
+  "md": strip-unit($screen-md),
+  "lg": strip-unit($screen-lg),
+) !default;
+
+@mixin content-width() {
+  margin: auto;
+
+  @each $slug, $size in $breakpoints {
+    @if ($size != 0) {
+      @media screen and (min-width: $size + 0px) {
+        width: map-get($container, $slug) + 0px;
+      }
+    } @else {
+      padding-left: $gutter;
+      padding-right: $gutter;
+    }
+  }
+}

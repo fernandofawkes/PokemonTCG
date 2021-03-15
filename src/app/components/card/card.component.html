@@ -1,1 +1,13 @@
-<p [routerLink]="['/card', card.id]">{{card.name}}</p>
+<div class="card" [routerLink]="['/card', card.id]">
+  <app-lazy-image class="card__section" [src]="card.images.small" [alt]="card.name"></app-lazy-image>
+  <div class="card__infos card__section">
+    <div class="info__text">
+      <p class="info__id">#{{card.id}}</p>
+      <h2 class="info__name">{{card.name}}</h2>
+      <span class="info__type" *ngFor="let type of card.types" [ngStyle]="{'background-color': type | toColor}">{{type}}</span>
+    </div>
+    <div class="info__arrow">
+      <span class="arrow icon-arrow-right"></span> 
+    </div>
+  </div>
+</div>

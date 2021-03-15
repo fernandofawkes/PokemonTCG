@@ -1,0 +1,12 @@
+@import "../../../styles/variables";
+
+.page__title{ 
+  font-size: map-get($font-sizes, 24);
+  color: $grey;
+  margin-block: rem(18);
+}
+.cards__grid {
+  display: grid;
+  gap: 25px 30px;
+  grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+}

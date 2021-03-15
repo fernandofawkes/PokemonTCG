@@ -1,5 +1,16 @@
 @import "../../../styles/variables";
+.search {
+  background-color: $off-white;
+  border-radius: 25px;
+  padding: 5px 10px;
+  display: flex;
 
+  &__elm {
+    background-color: transparent;
+    border: 0;
+    outline: 0;
+  }
+}
 .info {
   width: rem(28px);
   height: rem(28px);
@@ -7,7 +18,7 @@
   position: relative;
 
   i {
-    color: $blue;
-    font-size: rem(24px);
+    color: $dark-grey;
+    font-size: rem(18px);
   }
 }
