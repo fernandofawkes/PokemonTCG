@@ -4,6 +4,12 @@
   background-color: $white;
   box-shadow: 0 0 rem(16px) rgba($black, 0.16);
   margin-top: rem(80px);
+  display: grid;
+  grid-template-areas: 
+  'img'
+  'name'
+  'skills'
+  'effect';
 }
 
 .row {
@@ -15,15 +21,14 @@
 .container {
   flex-basis: 80%;
   @media screen and (min-width: $screen-sm) {
-    flex-basis: 45%;
+    flex-basis: 50%;
   }
   padding: rem(25px);
-
+  &__label {
+    color: $light-grey;
+  }
   &--image {
-     padding:0;
-
     margin: auto;
-    width: 75%;
     margin-top:  rem(-50px);
   }
 }

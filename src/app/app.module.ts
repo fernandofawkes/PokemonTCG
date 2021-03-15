@@ -16,6 +16,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
 import { LazyImageComponent } from './components/lazy-image/lazy-image.component';
 import { ToColorPipe } from './pipes/to-color.pipe';
+import { DetectVisibilityDirective } from './directives/detect-visibility.directive';
 
 registerLocaleData(LOCALE_PT, 'pt-BR');
 @NgModule({
@@ -28,7 +29,8 @@ registerLocaleData(LOCALE_PT, 'pt-BR');
     FooterComponent,
     DetailsComponent,
     LazyImageComponent,
-    ToColorPipe
+    ToColorPipe,
+    DetectVisibilityDirective
   ],
   imports: [
     BrowserModule,
