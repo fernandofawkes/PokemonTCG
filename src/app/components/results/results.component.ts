@@ -1,6 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { AfterViewInit, Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import { map, pluck, switchMap, tap } from 'rxjs/operators';
+import { delay, map, pluck, switchMap, tap } from 'rxjs/operators';
 import { PokemonTCGService } from 'src/app/services/pokemon-tcg.service';
 
 @Component({
@@ -8,12 +8,12 @@ import { PokemonTCGService } from 'src/app/services/pokemon-tcg.service';
   templateUrl: './results.component.html',
   styleUrls: ['./results.component.scss']
 })
-export class ResultsComponent implements OnInit {
+export class ResultsComponent implements AfterViewInit {
   cards$;
   currentSearchTerm: string;
   constructor(private tcgService: PokemonTCGService, private route: ActivatedRoute) { }
 
-  ngOnInit(): void {
+  ngAfterViewInit(): void {
     this.cards$ = this.route.queryParams.pipe(
       pluck('q'),
       tap(query => this.currentSearchTerm = query),
@@ -23,7 +23,7 @@ export class ResultsComponent implements OnInit {
     }));
   }
   
-  identifyCard(item, index: number){
+  identifyCard(item, index: number) {
     return item.id;
   }
 }
