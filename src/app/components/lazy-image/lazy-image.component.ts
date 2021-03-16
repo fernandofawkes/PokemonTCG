@@ -1,7 +1,4 @@
-import { AfterViewInit, Component, ElementRef, Input, OnChanges, OnInit, SimpleChanges, ViewChild } from '@angular/core';
-import { DomSanitizer, SafeResourceUrl } from '@angular/platform-browser';
-import { BehaviorSubject, Subject } from 'rxjs';
-
+import { Component, Input, OnInit } from '@angular/core';
 @Component({
   selector: 'app-lazy-image',
   templateUrl: './lazy-image.component.html',

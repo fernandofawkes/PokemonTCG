@@ -1,6 +1,6 @@
 <header>
   <div class="flex sb wrapper">
-    <a routerLink="/results?q=">
+    <a routerLink="/results" [queryParams]="{q: ''}">
       <img  class="logo" src="./assets/images/logo@2x.png" alt="pokémon logo">
     </a>
     <app-search class="flex ac"></app-search>
